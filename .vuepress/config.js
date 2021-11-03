@@ -26,6 +26,7 @@ module.exports = {
     ],
     sidebar: {
       '/docs/theme-reco/': [
+        // 这里是干啥的呢？
         '',
         'theme',
         'plugin',
