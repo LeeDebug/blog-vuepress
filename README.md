@@ -1,7 +1,8 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+# 首屏的文字
+heroText: 淳淳同学的个人博客
+tagline: 日拱一卒无有尽，功不唐捐终入海
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -14,8 +15,9 @@ tagline: A simple and beautiful vuepress blog theme.
 bgImageStyle: {
   height: '450px'
 }
-isShowTitleInHome: false
-actionText: Guide
+isShowTitleInHome: true
+# 在哪里展示的
+actionText: 我是谁，我在哪
 actionLink: /views/other/guide
 features:
 - title: Yesterday
