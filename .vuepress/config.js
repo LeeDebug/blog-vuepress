@@ -151,8 +151,8 @@ module.exports = {
   // 更多插件设置：
   // https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
   // https://v1.vuepress.vuejs.org/plugin/using-a-plugin.html
-  plugins: {
-    '@vuepress/medium-zoom': {
+  plugins: [
+    ['@vuepress/medium-zoom', {
       // selector: 'img.zoom-custom-imgs',
       selector: 'img',
       // medium-zoom options here
@@ -160,6 +160,28 @@ module.exports = {
       options: {
         margin: 16
       },
-    },
-  },
+    }],
+    // process.env.OFFLINE != 'true' ? [
+    //     '@vssue/vuepress-plugin-vssue',
+    //     {
+    //         // 设置 `platform` 而不是 `api`
+    //         platform: 'github',
+    //         autoCreateIssue: true, //自动创建issue，可以直接评论，私有仓库需要修改vssue
+    //         // app_integration_guide\node_modules\vssue\dist\vssue.js 文件，postIssue方法，注释掉下面的逻辑（非admin也可以创建评论）
+    //         // // if (!this.isAdmin)
+    //         //     return;
+    //         owner: 'parkvidaa',
+    //         repo: 'comments',
+    //         clientId: '77c55d0d7c586ae6d385',
+    //         clientSecret: '2530f292ca166586ab640e1aa8de5f3d19b16140',
+    //         //1、创建GitHub OAuth App,链接：https://vssue.js.org/zh/guide/github.html
+    //         //2、创建GitHub 仓库
+    //         //3、使用GitHub，需要解除跨域问题（vssue默认使用了个公共代理，但是现在有限制，自己写了一个）
+    //         //4、使用GitHub仓库，用户就需要用GitHub账户登录后才能评论（显示的名字也是GitHub用户名）
+    //         proxy: 'https://arv4n0ppak.execute-api.us-west-2.amazonaws.com/cors_proxy?u=https://github.com/login/oauth/access_token', //限制了只代理github这个域名
+    //         // app_integration_guide\node_modules\@vssue\api-github-v3\lib\index.js
+    //         // public_repo 改为repo，注释掉is:public，可实现私有仓库评论（from https://github.com/meteorlxy/vssue/issues/88）
+    //     },
+    // ] : [],
+  ],
 }  
