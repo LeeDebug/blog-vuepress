@@ -148,5 +148,18 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  // 更多插件设置：https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
+  // 更多插件设置：
+  // https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
+  // https://v1.vuepress.vuejs.org/plugin/using-a-plugin.html
+  plugins: {
+    '@vuepress/medium-zoom': {
+      // selector: 'img.zoom-custom-imgs',
+      selector: 'img',
+      // medium-zoom options here
+      // See: https://github.com/francoischalifour/medium-zoom#options
+      options: {
+        margin: 16
+      },
+    },
+  },
 }  
