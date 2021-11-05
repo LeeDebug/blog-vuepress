@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "author": "licc",
   "scripts": {
-    "dev": "vuepress dev . --open --host \"localhost\"",
-    "build": "vuepress build ."
+    "dev": "vuepress dev blog --open --host \"localhost\"",
+    "build": "vuepress build blog"
+  },
+  "dependencies": {
+    "vuepress": "^1.8.2"
   },
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.8.2",
-    "vuepress": "1.8.2",
     "vuepress-theme-reco": "1.6.6"
   },
   "description": "vuepress-docs"

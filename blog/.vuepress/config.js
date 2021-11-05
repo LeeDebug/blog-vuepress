@@ -3,7 +3,7 @@ module.exports = {
   title: '淳淳同学的个人博客',
   description: '日拱一卒无有尽，功不唐捐终入海',
   // 编译产物的路径
-  dest: '.vuepress/dist',
+  dest: 'blog/.vuepress/dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
