@@ -1,4 +1,9 @@
 module.exports = {
+  // 是否需要缓存
+  // TODO By Licc: 为何写在 npm script 里有效，写在这里却无效？
+  // cache: 'blog/.vuepress/.cache',
+  // 热更新相关路径？临时文件
+  temp: 'blog/.vuepress/.temp',
   // html title + loading + ↖️ logo
   title: '淳淳同学的个人博客',
   description: '日拱一卒无有尽，功不唐捐终入海',

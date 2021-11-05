@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "licc",
   "scripts": {
-    "dev": "vuepress dev blog --open --host \"localhost\"",
+    "dev": "vuepress dev blog --cache blog/.vuepress/.cache --open",
     "build": "vuepress build blog"
   },
   "dependencies": {
