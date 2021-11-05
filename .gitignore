@@ -1,5 +1,5 @@
 node_modules/
-.vuepress/dist/
+blog/.vuepress/dist/
 
 yarn.lock
 yarn.error
