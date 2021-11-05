@@ -1,10 +1,13 @@
 const personalDev = require('./config/env/personal.config').getConfig()
+const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
   // 启动域名
   host: personalDev.host,
   // 启动端口
   port: personalDev.port,
+  // 部署站点的基础路径
+  base: isDev ? '/' : '/vuepress/',
   // 是否需要缓存
   // TODO By Licc: 为何写在 npm script 里有效，写在这里却无效？
   // cache: 'blog/.vuepress/.cache',
