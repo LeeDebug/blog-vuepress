@@ -5,8 +5,8 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - 'release/**'
-      - '!releases/**-alpha'
+      - 'release-**'
+      - '!releases-**-alpha'
 
 # 任务
 jobs:
