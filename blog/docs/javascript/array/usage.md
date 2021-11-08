@@ -670,7 +670,7 @@ func1(2) // 2
 var func2 = x => {x}
 func2(2) // undefined
 var func3 = x => ({x})
-func3(2) // {x: undefined}
+func3() // {x: undefined}
 func3(2) // {x: 2}
 ```
 
