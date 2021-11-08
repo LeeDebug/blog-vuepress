@@ -7,6 +7,8 @@
     "build": "vuepress build blog"
   },
   "dependencies": {
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
     "vuepress": "^1.8.2"
   },
   "devDependencies": {
