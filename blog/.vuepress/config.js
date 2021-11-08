@@ -182,6 +182,7 @@ module.exports = {
         margin: 16
       },
     }],
+    // vssue: https://vssue.js.org/guide/vuepress.html
     // process.env.OFFLINE != 'true' ? [
     //     '@vssue/vuepress-plugin-vssue',
     //     {
