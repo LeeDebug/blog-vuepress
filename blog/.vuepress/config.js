@@ -163,11 +163,11 @@ module.exports = {
   // MarkDown
   markdown: {
     lineNumbers: true,
-    slugify: function (str, a, b) {
-      console.log('======= str:\n', str)
-      console.log('======= a:\n', a)
-      console.log('======= b:\n', b)
-    },
+    // slugify: function (str, a, b) {
+    //   console.log('======= str:\n', str)
+    //   console.log('======= a:\n', a)
+    //   console.log('======= b:\n', b)
+    // },
   },
   // 更多插件设置：
   // https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
