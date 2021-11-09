@@ -21,7 +21,7 @@ module.exports = {
   dest: 'blog/.vuepress/dist',
   head: [
     // 网页标签栏图标
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/imgs/favicon.ico' }],
     // 移动栏优化
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     // 引入jquery
@@ -139,7 +139,7 @@ module.exports = {
         link: 'https://vuepress-theme-reco.recoluan.com'
       },
     ],
-    logo: '/logo.png',
+    logo: '/imgs/logo.png',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
@@ -151,7 +151,7 @@ module.exports = {
     // 作者
     author: 'Licc',
     // 作者头像
-    authorAvatar: '/avatar.png',
+    authorAvatar: '/imgs/avatar.png',
     // 备案号
     record: '鲁ICP备19000206号',
     // 项目开始时间
@@ -188,15 +188,18 @@ module.exports = {
   // https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
   // https://v1.vuepress.vuejs.org/plugin/using-a-plugin.html
   plugins: [
-    ['@vuepress/medium-zoom', {
-      // selector: 'img.zoom-custom-imgs',
-      selector: 'img',
-      // medium-zoom options here
-      // See: https://github.com/francoischalifour/medium-zoom#options
-      options: {
-        margin: 16
-      },
-    }],
+    [
+      '@vuepress/medium-zoom',
+      {
+        // selector: 'img.zoom-custom-imgs',
+        selector: 'img',
+        // medium-zoom options here
+        // See: https://github.com/francoischalifour/medium-zoom#options
+        options: {
+          margin: 16
+        },
+      }
+    ],
     // vssue: https://vssue.js.org/guide/vuepress.html
     [
         '@vssue/vuepress-plugin-vssue',
