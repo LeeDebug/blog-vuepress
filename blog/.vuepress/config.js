@@ -20,10 +20,24 @@ module.exports = {
   // 编译产物的路径
   dest: 'blog/.vuepress/dist',
   head: [
+    // 网页标签栏图标
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    // 移动栏优化
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
-    // ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" }],
-    // ["script", { src: "scripts/demo.js" }],
+    // 引入jquery
+    ['script', {
+      'language': 'javascript',
+      'type': 'text/javascript',
+      'src': 'https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js'
+    }],
+    // 引入鼠标点击脚本（爱国富强）
+    ['script', {
+      'language': 'javascript',
+      'type': 'text/javascript',
+      'src': '/js/MouseClickEffect.js'
+    }],
+    // ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css' }],
+    // ['script', { src: 'scripts/demo.js' }],
   ],
   // 多语言
   locales: {
@@ -121,7 +135,7 @@ module.exports = {
       {
         title: 'vuepress-theme-reco',
         desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-        avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+        avatar: 'https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png',
         link: 'https://vuepress-theme-reco.recoluan.com'
       },
     ],
