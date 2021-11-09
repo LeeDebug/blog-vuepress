@@ -225,5 +225,17 @@ module.exports = {
             autoCreateIssue: true,
         },
     ],
+    // 动态标题（离开、回来）
+    [
+      'dynamic-title',
+      {
+        // showIcon: '/imgs/smile.ico',
+        showText: '欢迎回来哟~ 😈 ',
+        // hideIcon: '/imgs/amazed.ico',
+        hideText: '哎呀，不要走嘛~ 😱 ',
+        recoverTime: 2000
+      }
+    ],
+    // other plugins ...
   ],
 }  
