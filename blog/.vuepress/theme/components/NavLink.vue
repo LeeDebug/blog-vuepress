@@ -1,31 +1,32 @@
 <template>
-  <RouterLink
-    v-if="isInternal"
+  <router-link
     class="nav-link"
     :to="link"
-    :exact="exact"
-    @focusout.native="focusoutAction"
-  >
+    v-if="!isExternal(link)"
+    :exact="exact">
+    <reco-icon :icon="`${item.icon}`" />
     {{ item.text }}
-  </RouterLink>
+  </router-link>
   <a
     v-else
     :href="link"
     class="nav-link external"
-    :target="target"
-    :rel="rel"
-    @focusout="focusoutAction"
+    :target="isMailto(link) || isTel(link) ? null : '_blank'"
+    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
   >
+    <reco-icon :icon="`${item.icon}`" />
     {{ item.text }}
-    <OutboundLink v-if="isBlankTarget" />
+    <OutboundLink/>
   </a>
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from '../util'
+import { defineComponent, computed, toRefs, getCurrentInstance } from 'vue-demi'
+import { isExternal, isMailto, isTel, ensureExt } from '@theme/helpers/utils'
+import { RecoIcon } from '@vuepress-reco/core/lib/components'
 
-export default {
-  name: 'NavLink',
+export default defineComponent({
+  components: { RecoIcon },
 
   props: {
     item: {
@@ -33,58 +34,21 @@ export default {
     }
   },
 
-  computed: {
-    link () {
-      return ensureExt(this.item.link)
-    },
+  setup (props, ctx) {
+    const instance = getCurrentInstance().proxy
 
-    exact () {
-      if (this.$site.locales) {
-        return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
+    const { item } = toRefs(props)
+
+    const link = computed(() => ensureExt(item.value.link))
+
+    const exact = computed(() => {
+      if (instance.$site.locales) {
+        return Object.keys(instance.$site.locales).some(rootLink => rootLink === link.value)
       }
-      return this.link === '/'
-    },
+      return link.value === '/'
+    })
 
-    isNonHttpURI () {
-      return isMailto(this.link) || isTel(this.link)
-    },
-
-    isBlankTarget () {
-      return this.target === '_blank'
-    },
-
-    isInternal () {
-      return !isExternal(this.link) && !this.isBlankTarget
-    },
-
-    target () {
-      if (this.isNonHttpURI) {
-        return null
-      }
-      if (this.item.target) {
-        return this.item.target
-      }
-      return isExternal(this.link) ? '_blank' : ''
-    },
-
-    rel () {
-      if (this.isNonHttpURI) {
-        return null
-      }
-      if (this.item.rel === false) {
-        return null
-      }
-      if (this.item.rel) {
-        return this.item.rel
-      }
-      return this.isBlankTarget ? 'noopener noreferrer' : null
-    }
-  },
-
-  methods: {
-    focusoutAction () {
-      this.$emit('focusout')
-    }
+    return { link, exact, isExternal, isMailto, isTel }
   }
-}
+})
 </script>

@@ -1,5 +1,7 @@
 <script>
-export default {
+import { defineComponent } from 'vue-demi'
+
+export default defineComponent({
   functional: true,
   props: {
     type: {
@@ -20,7 +22,7 @@ export default {
       }
     }, props.text || slots().default)
   }
-}
+})
 </script>
 
 <style lang="stylus" scoped>
@@ -29,16 +31,16 @@ export default {
   font-size 14px
   height 18px
   line-height 18px
-  border-radius 3px
+  border-radius $borderRadius
   padding 0 6px
   color white
   background-color #42b983
   &.tip, &.green
-    background-color $badgeTipColor
+    background-color #42b983
   &.error
-    background-color $badgeErrorColor
+    background-color #DA5961
   &.warning, &.warn, &.yellow
-    background-color $badgeWarningColor
+    background-color darken(#ffe564, 35%)
   & + &
     margin-left 5px
 </style>

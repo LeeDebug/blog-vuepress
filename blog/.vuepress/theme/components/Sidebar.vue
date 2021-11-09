@@ -1,41 +1,43 @@
 <template>
   <aside class="sidebar">
-    <NavLinks />
-
-    <slot name="top" />
-
-    <SidebarLinks
-      :depth="0"
-      :items="items"
-    />
-    <slot name="bottom" />
+    <slot name="top"/>
+    <NavLinks/>
+    <SidebarLinks :depth="0" :items="items"/>
+    <slot name="bottom"/>
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
+import { defineComponent } from 'vue-demi'
+import SidebarLinks from '@theme/components/SidebarLinks'
+import NavLinks from '@theme/components/NavLinks'
 
-export default {
+export default defineComponent({
   name: 'Sidebar',
-
   components: { SidebarLinks, NavLinks },
-
   props: ['items']
-}
+})
 </script>
 
 <style lang="stylus">
 .sidebar
+  &&::-webkit-scrollbar
+    width: 0
+    height: 0
+  .personal-info-wrapper
+    display none
   ul
     padding 0
     margin 0
     list-style-type none
+    &.sidebar-links
+      > li
+        background $accentColor
   a
     display inline-block
   .nav-links
     display none
-    border-bottom 1px solid $borderColor
+    border-bottom 1px solid var(--border-color)
     padding 0.5rem 0 0.75rem 0
     a
       font-weight 600
@@ -47,14 +49,16 @@ export default {
   & > .sidebar-links
     padding 1.5rem 0
     & > li > a.sidebar-link
-      font-size 1.1em
+      font-size 1em
       line-height 1.7
-      font-weight bold
+      font-weight 500
     & > li:not(:first-child)
       margin-top .75rem
 
 @media (max-width: $MQMobile)
   .sidebar
+    .personal-info-wrapper
+      display block
     .nav-links
       display block
       .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after

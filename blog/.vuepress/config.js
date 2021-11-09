@@ -42,6 +42,7 @@ module.exports = {
     //   description: '日拱一卒无有尽，功不唐捐终入海',
     // },
   },
+  // 修改当前主题
   theme: 'reco',
   // 主题相关
   themeConfig: {
