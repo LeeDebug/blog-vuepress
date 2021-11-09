@@ -100,6 +100,7 @@ module.exports = {
         ]
       }
     ],
+    // TODO By Licc: see: https://vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html
     sidebar: {
       '/docs/theme-reco/': [
         // 这里是干啥的呢？
@@ -109,6 +110,12 @@ module.exports = {
         'api'
       ]
     },
+    // 在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
+    subSidebar: 'auto',
+    // 显示所有页面的标题链接 默认值：false
+    displayAllHeaders: true,
+    // 活动的标题链接 默认值：true
+    activeHeaderLinks: false,
     // 启用页面滚动效果
     smoothScroll: true,
     // 隐藏后，即可开启首页模式
