@@ -49,13 +49,15 @@
       </div>
     </ModuleTransition>
 
-    <Vssue
-      title="This_Is_VuePress_Vssue"
-      class="theme-default-content content__default"
-      :options="{ locale: 'zh' }"
-    />
-
     <ModuleTransition delay="0.32">
+      <Vssue
+        title="This_Is_VuePress_Vssue"
+        class="theme-default-content content__default"
+        :options="{ locale: 'zh' }"
+      />
+    </ModuleTransition>
+
+    <ModuleTransition delay="0.40">
       <Comments v-if="recoShowModule" :isShowComments="shouldShowComments"/>
     </ModuleTransition>
 
