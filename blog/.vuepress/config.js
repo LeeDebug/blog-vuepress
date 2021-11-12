@@ -1,5 +1,6 @@
 const personalDev = require('./config/env/personal.config').getConfig()
 const isDev = process.env.NODE_ENV === 'development'
+const sidebar = require('./config/sidebar/')
 
 module.exports = {
   // 启动域名
@@ -102,104 +103,8 @@ module.exports = {
     ],
     // TODO By Licc: see: https://vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html
     // see: https://gitee.com/zpj80231/znote/tree/master
-    sidebar: {
-      '/docs/': [
-        // 这里是干啥的呢？
-        '',
-        {
-            title: 'python爬虫',
-            collapsable: true,
-            sidebarDepth: 0,
-            children: [
-                'theme-reco/theme',
-                'theme-reco/plugin',
-            ]
-        },
-        'theme',
-        'plugin',
-        'api'
-      ],
-      '/blogs/': [
-        // 这里是干啥的呢？
-        '',
-        {
-            title: 'python爬虫',
-            collapsable: true,
-            sidebarDepth: 0,
-            children: [
-                'other/guide',
-            ]
-        },
-        'vue---router',
-      ],
-      '/vue/': [
-        // 这里是干啥的呢？
-        '',
-        {
-            title: 'python爬虫',
-            collapsable: true,
-            sidebarDepth: 0,
-            children: [
-                'vue---router',
-            ]
-        },
-        'vue---router',
-      ],
-      // '/views/': [
-      //   '',
-      //   {
-      //       title: 'python爬虫',
-      //       collapsable: true,
-      //       sidebarDepth: 0,
-      //       children: [
-      //           'webc/01.Requests使用技巧',
-      //           'webc/02.数据存入Excel',
-      //       ]
-      //   },
-      //   // 以下是分组形式
-      //   {
-      //       title: 'Group 1',   // 必要的
-      //       path: '/views/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-      //       collapsable: true, // 可选的, 默认值是 true,
-      //       sidebarDepth: 1,    // 可选的, 默认值是 1
-      //       children: [
-      //           'webc/01.Requests使用技巧',
-      //           'webc/02.数据存入Excel',
-      //           {
-      //               title: 'Group 2',   // 必要的
-      //               path: '/views/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-      //               collapsable: true, // 可选的, 默认值是 true,
-      //               sidebarDepth: 1,    // 可选的, 默认值是 1
-      //               children: [
-      //                   'webc/01.Requests使用技巧',
-      //                   'webc/02.数据存入Excel',
-      //                   {
-      //                       title: 'Group 1',   // 必要的
-      //                       path: '/views/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-      //                       collapsable: true, // 可选的, 默认值是 true,
-      //                       sidebarDepth: 1,    // 可选的, 默认值是 1
-      //                       children: [
-      //                           'webc/01.Requests使用技巧',
-      //                           'webc/02.数据存入Excel',
-      //                           {
-      //                               title: 'Group 2',   // 必要的
-      //                               path: '/views/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-      //                               collapsable: true, // 可选的, 默认值是 true,
-      //                               sidebarDepth: 1,    // 可选的, 默认值是 1
-      //                               children: [
-      //                                   'webc/01.Requests使用技巧',
-      //                                   'webc/02.数据存入Excel',
-                                        
-      //                               ]
-      //                             },
-      //                       ]
-      //                     },
-      //               ]
-      //             },
-      //       ]
-      //   },
-      // ],
-    },
+    // sidebar: 'auto',
+    sidebar,
     // 在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
     subSidebar: 'auto',
     // 显示所有页面的标题链接 默认值：false
