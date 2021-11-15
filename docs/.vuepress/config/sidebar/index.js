@@ -2,6 +2,9 @@
 // 侧边栏
 // 更多侧边栏配置：
 // https://vuepress.vuejs.org/zh/theme/default-theme-config.html
+// 侧边栏案例：
+// 1. https://lovelijunyi.gitee.io/blog/views/
+// 2. https://blog.smallsunnyfox.com/note/html5/html5de-yu-yi-yuan-su.html
 module.exports = {
     '/note/': [
         {
