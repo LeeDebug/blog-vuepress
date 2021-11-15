@@ -1,8 +1,12 @@
 const personalDev = require('./config/env/personal.config').getConfig()
 const isDev = process.env.NODE_ENV === 'development'
-const sidebar = require('./config/sidebar/')
+const sidebar = require('./config/sidebar')
 
 module.exports = {
+  // html title + loading + ↖️ logo
+  title: '淳淳同学的个人博客',
+  description: '日拱一卒无有尽，功不唐捐终入海',
+
   // 启动域名
   host: personalDev.host,
   // 启动端口
@@ -10,16 +14,14 @@ module.exports = {
   // 部署站点的基础路径，需要是 /<REPO>/ 的仓库名才行
   // 详见：https://vuepress.vuejs.org/zh/guide/deploy.html#github-pages
   base: isDev ? '/' : '/blog-vuepress/',
+  // 编译产物的路径
+  dest: 'docs/.vuepress/dist',
+  // 热更新相关路径？临时文件
+  temp: 'docs/.vuepress/.temp',
   // 是否需要缓存
   // TODO By Licc: 为何写在 npm script 里有效，写在这里却无效？
-  // cache: 'blog/.vuepress/.cache',
-  // 热更新相关路径？临时文件
-  temp: 'blog/.vuepress/.temp',
-  // html title + loading + ↖️ logo
-  title: '淳淳同学的个人博客',
-  description: '日拱一卒无有尽，功不唐捐终入海',
-  // 编译产物的路径
-  dest: 'blog/.vuepress/dist',
+  // cache: 'docs/.vuepress/.cache',
+
   head: [
     // 网页标签栏图标
     ['link', { rel: 'icon', href: '/imgs/favicon.ico' }],
@@ -40,6 +42,7 @@ module.exports = {
     // ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css' }],
     // ['script', { src: 'scripts/demo.js' }],
   ],
+
   // 多语言
   locales: {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
@@ -57,10 +60,33 @@ module.exports = {
     //   description: '日拱一卒无有尽，功不唐捐终入海',
     // },
   },
+
   // 修改当前主题
   theme: 'reco',
   // 主题相关
   themeConfig: {
+    // 自定义首页，参考：https://vuepress-theme-reco.recoluan.com/views/1.x/home.html
+    type: 'blog', // 隐藏后，即可开启首页模式
+    // 博客设置（插入大菜单中）
+    blogConfig: {
+      category: {
+        location: 2, // 在导航栏菜单中所占的位置，默认2
+        text: 'Cate分类' // 默认 “分类”
+      },
+      tag: {
+        location: 3, // 在导航栏菜单中所占的位置，默认3
+        text: 'Tag标签' // 默认 “标签”
+      },
+      // socialLinks: [
+      //   { icon: 'reco-github', link: 'https://github.com/To2rk' },
+      // ],
+      // views: {
+      //   location: 5, // 在导航栏菜单中所占的位置，默认3
+      //   text: '左侧边栏' // 默认 “标签”
+      // }
+    },
+
+    // （主题中）多语言下的文案配置
     locales: {
       '/': {
         recoLocales: {
@@ -81,11 +107,14 @@ module.exports = {
       // '/en/': {
       // }
     },
+
     // 右上角大菜单
     nav: [
       { text: '主页', link: '/', icon: 'reco-home' },
       // 默认自带
       { text: '时间线', link: '/timeline/', icon: 'reco-date' },
+      { text: 'note', link: '/note/', icon: 'reco-document' },
+      { text: '两个侧边栏', link: '/views/', icon: 'reco-date' },
       {
         text: '文档链接', 
         icon: 'reco-message',
@@ -101,39 +130,37 @@ module.exports = {
         ]
       }
     ],
+
     // TODO By Licc: see: https://vuepress.vuejs.org/zh/plugin/official/plugin-active-header-links.html
-    // see: https://gitee.com/zpj80231/znote/tree/master
     // sidebar: 'auto',
     sidebar,
+    sidebarDepth: 1,
     // 在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
     subSidebar: 'auto',
     // 显示所有页面的标题链接 默认值：false
-    displayAllHeaders: true,
+    displayAllHeaders: false,
+    // displayAllHeaders: true,
     // 活动的标题链接 默认值：true
-    activeHeaderLinks: false,
+    // activeHeaderLinks: false,
+
     // 启用页面滚动效果
     smoothScroll: true,
-    // 隐藏后，即可开启首页模式
-    // 自定义首页，参考：https://vuepress-theme-reco.recoluan.com/views/1.x/home.html#home-blog
-    type: 'blog',
-    // 博客设置（插入大菜单中）
-    blogConfig: {
-      category: {
-        location: 2, // 在导航栏菜单中所占的位置，默认2
-        text: 'Cate分类' // 默认 “分类”
-      },
-      tag: {
-        location: 3, // 在导航栏菜单中所占的位置，默认3
-        text: 'Tag标签' // 默认 “标签”
-      },
-      // socialLinks: [
-      //   { icon: 'reco-github', link: 'https://github.com/To2rk' },
-      // ],
-      // views: {
-      //   location: 5, // 在导航栏菜单中所占的位置，默认3
-      //   text: '左侧边栏' // 默认 “标签”
-      // }
-    },
+    logo: '/imgs/logo.png',
+    // 搜索设置
+    search: true,
+    searchMaxSuggestions: 10,
+
+    // 最后更新时间
+    lastUpdated: 'Last Updated',
+    // 作者
+    author: 'Licc',
+    // 作者头像
+    authorAvatar: '/imgs/avatar.png',
+    // 备案号
+    record: '鲁ICP备19000206号',
+    // 项目开始时间
+    startYear: '2018',
+
     friendLink: [
       {
         title: '午后南杂',
@@ -148,27 +175,10 @@ module.exports = {
         link: 'https://vuepress-theme-reco.recoluan.com'
       },
     ],
-    logo: '/imgs/logo.png',
-    // 搜索设置
-    search: true,
-    searchMaxSuggestions: 10,
-    // 自动形成侧边导航
-    // 更多侧边栏配置：https://vuepress.vuejs.org/zh/theme/default-theme-config.html#%E4%BE%A7%E8%BE%B9%E6%A0%8F
-    sidebar: 'auto',
-    // 最后更新时间
-    lastUpdated: 'Last Updated',
-    // 作者
-    author: 'Licc',
-    // 作者头像
-    authorAvatar: '/imgs/avatar.png',
-    // 备案号
-    record: '鲁ICP备19000206号',
-    // 项目开始时间
-    startYear: '2018'
+
     /**
      * 密钥 (if your blog is private)
      */
-
     // keyPage: {
     //   keys: ['your password'],
     //   color: '#42b983',
@@ -178,12 +188,12 @@ module.exports = {
     /**
      * valine 设置 (if you need valine comment )
      */
-
     // valineConfig: {
     //   appId: '...',// your appId
     //   appKey: '...', // your appKey
     // }
   },
+
   // MarkDown
   markdown: {
     lineNumbers: true,
@@ -193,6 +203,7 @@ module.exports = {
     //   console.log('======= b:\n', b)
     // },
   },
+
   // 更多插件设置：
   // https://vuepress-theme-reco.recoluan.com/views/1.x/recommend.html
   // https://v1.vuepress.vuejs.org/plugin/using-a-plugin.html
