@@ -109,6 +109,7 @@ module.exports = {
     },
 
     // 右上角大菜单
+    // TODO By Licc: https://zpj80231.github.io/znote/other/project.html
     nav: [
       { text: '主页', link: '/', icon: 'reco-home' },
       // 默认自带
