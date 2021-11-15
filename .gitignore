@@ -1,7 +1,7 @@
 node_modules/
-blog/.vuepress/dist/
-blog/.vuepress/.cache/
-blog/.vuepress/.temp/
+docs/.vuepress/dist/
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
 
 yarn.lock
 yarn.error
