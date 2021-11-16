@@ -114,8 +114,8 @@ module.exports = {
       { text: '主页', link: '/', icon: 'reco-home' },
       // 默认自带
       { text: '时间线', link: '/timeline/', icon: 'reco-date' },
-      { text: 'note', link: '/note/', icon: 'reco-document' },
-      { text: '两个侧边栏', link: '/views/', icon: 'reco-date' },
+      // { text: 'note', link: '/note/', icon: 'reco-document' },
+      { text: '文章列表', link: '/views/', icon: 'reco-document' },
       {
         text: '文档链接', 
         icon: 'reco-message',
