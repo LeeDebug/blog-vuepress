@@ -257,6 +257,17 @@ module.exports = {
         recoverTime: 2000
       }
     ],
+    // 中文标题，自动转拼音
+    // see: https://github.com/viko16/vuepress-plugin-permalink-pinyin
+    [
+      'permalink-pinyin',
+      {
+        // Converted into lowercase, default: true
+        lowercase: true,
+        // Separator of the slug, default: '-'
+        separator: '-'
+      }
+    ],
     // other plugins ...
   ],
 }  
