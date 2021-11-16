@@ -116,18 +116,19 @@ module.exports = {
       { text: '时间线', link: '/timeline/', icon: 'reco-date' },
       // { text: 'note', link: '/note/', icon: 'reco-document' },
       { text: '文章列表', link: '/views/', icon: 'reco-document' },
-      {
-        text: '文档链接', 
-        icon: 'reco-message',
-        items: [
-          { text: 'vuepress-reco-theme', link: '/docs/theme-reco/' }
-        ]
-      },
+      // {
+      //   text: '文档链接', 
+      //   icon: 'reco-message',
+      //   items: [
+      //     { text: 'vuepress-reco-theme', link: '/docs/theme-reco/' }
+      //   ]
+      // },
       {
         text: '个人社区',
         icon: 'reco-message',
         items: [
-          { text: 'GitHub', link: 'https://github.com/LeeDebug', icon: 'reco-github' }
+          { text: 'GitHub', link: 'https://github.com/LeeDebug', icon: 'reco-github' },
+          { text: 'Hexo Blog', link: 'https://blog.leedebug.cn', icon: 'reco-blog' },
         ]
       }
     ],
