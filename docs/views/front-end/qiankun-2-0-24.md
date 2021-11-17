@@ -568,7 +568,7 @@ vueApp.$nextTick(() => {
 
 ## 主、子应用的路由，均可用 history 模式
 
-因为vue-router的history模式是全匹配的，所以如果当前子应用是被qiankun嵌入时，需要在子应用的一级路由前加上主应用除了`http://ip+port/`后的所有路由，即在主应用中初始子应用是定义的`activeRule`。
+因为 vue-router 的 history 模式是全匹配的，所以如果当前子应用是被qiankun嵌入时，需要在子应用的一级路由前加上主应用除了`http://ip+port/`后的所有路由，即在主应用中初始子应用是定义的`activeRule`。
 
 ```js
 router = new VueRouter({
@@ -588,7 +588,7 @@ router = new VueRouter({
 
 ## 从一个子项目跳转到另一个子项目
 
-在子项目里面如何跳转到另一个子项目/主项目页面呢，直接写 <router-link> 或者用 router.push/router.replace 是不行的，原因是这个 router 是子项目的路由，所有的跳转都会基于子项目的 base 。写 <a> 链接可以跳转过去，但是会刷新页面，用户体验不好。
+在子项目里面如何跳转到另一个子项目/主项目页面呢，直接写 `<router-link>` 或者用 router.push/router.replace 是不行的，原因是这个 router 是子项目的路由，所有的跳转都会基于子项目的 base 。写 <a> 链接可以跳转过去，但是会刷新页面，用户体验不好。
 
 解决办法也比较简单，在子项目注册时将主项目的路由实例对象传过去，子项目挂载到全局，用父项目的这个 router 跳转就可以了。
 
@@ -632,7 +632,7 @@ if (item === '/index/config/template/edit/static') { // 登录页img
 ## ts项目与js项目文件加载的问题
 
 因为主项目是ts，默认加载的是ts文件；但子项目是js。所以在子项目中引入js文件的时候要标清楚后缀名，例如
-```
+```js
 // 会报错  Unknown custom element: <widget> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
 import {widgetInRecord as widget} from '@/views/sheetConfig/fieldConfig/widget/widget'
 
