@@ -92,7 +92,7 @@ date: 2019-08-21
 
 </div>
 
-<CatalogGraph  root='/views/' title='概览' :height='320' />
+<!-- <CatalogGraph  root='/views/' title='概览' :height='320' /> -->
 
 <script>
 	export default {
