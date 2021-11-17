@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "author": "licc",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "sidebar": "node docs/.vuepress/build/sidebar.js",
+    "dev": "npm run sidebar && vuepress dev docs",
     "build": "vuepress build docs"
   },
   "dependencies": {
