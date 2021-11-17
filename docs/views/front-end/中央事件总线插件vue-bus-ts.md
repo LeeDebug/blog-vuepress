@@ -19,7 +19,7 @@ date: 2020-11-07 18:28:46
 
 ## 安装
 
-```zsh
+```bash
 npm i -S vue-bus-ts
 ```
 

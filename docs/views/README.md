@@ -98,7 +98,7 @@ date: 2019-08-21
 	export default {
 		data() {
 			return {
-                changeTime: '2000',
+				changeTime: '2000',
 				index: 2,
 				imgSrc: '/znote/view/比心1.png',
 				active: 'active'
