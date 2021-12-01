@@ -269,6 +269,16 @@ module.exports = {
     //     separator: '-'
     //   }
     // ],
+    // 看板娘
+    ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {
+      modelStyle:{
+        right: '50px',
+        bottom: '-20px',
+        opacity: '0.9',
+      },
+      messageStyle:{ right: '28px', bottom: '190px' },
+      btnStyle:{right: '50px', bottom: '40px'},
+    }],
     // other plugins ...
   ],
 }  
