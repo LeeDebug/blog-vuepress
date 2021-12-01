@@ -269,6 +269,8 @@ module.exports = {
     //     separator: '-'
     //   }
     // ],
+    // more plugin setting see the following
+    // https://blog.csdn.net/qq_38390669/article/details/110859800
     // 看板娘
     ['@vuepress-reco/vuepress-plugin-kan-ban-niang', {
       modelStyle:{
@@ -278,6 +280,26 @@ module.exports = {
       },
       messageStyle:{ right: '28px', bottom: '190px' },
       btnStyle:{right: '50px', bottom: '40px'},
+    }],
+    // bgm-player
+    ["@vuepress-reco/vuepress-plugin-bgm-player",
+      {
+        audios: [
+          // 网络文件示例
+          {
+            name: '我要我们在一起(Live)',
+            artist: 'G.E.M.邓紫棋',
+            url: 'https://other-web-re01-sycdn.kuwo.cn/aad12b9d8d41716a72ef98c6262ad38f/61a7871a/resource/n3/37/83/474402138.mp3',
+            cover: 'https://img1.kuwo.cn/star/albumcover/500/73/43/1189468000.jpg'
+          }
+        ] ,
+        // 自动缩小
+        // autoShrink: true,
+        // 悬浮窗模式，吸边
+        shrinkMode: 'float' ,
+        // 悬浮窗位置
+        floatStyle:{ bottom: '10px', 'z-index': '999999' },
+
     }],
     // other plugins ...
   ],

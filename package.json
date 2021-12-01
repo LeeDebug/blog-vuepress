@@ -13,6 +13,7 @@
     "vuepress": "^1.8.2"
   },
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.4",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "vuepress-plugin-dynamic-title": "^1.0.0",
